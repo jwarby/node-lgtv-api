@@ -21,7 +21,7 @@ LgTvApi.prototype.setDebugMode = function (_debugMode) {
 };
 
 LgTvApi.prototype.displayPairingKey = function (functionCallback) {
-    this.sendXMLRequest('/roap/api/auth', {auth: {type: 'AuthKeyReq'}}, (function (err, response, data) {
+    this.sendXMLRequest('/roap/api/auth', {auth: {type: 'AuthKeyReq'}}, (function (b, err, response, data) {
         if (err || response.statusCode != 200) {
             functionCallback(err != null ? err : new Error('Response code:' + response.statusCode));
         } else {
